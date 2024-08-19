@@ -9,10 +9,16 @@ const providers: ProviderWithScope[] = [
     Logger
 ];
 
+function Wrapper(props: { children: any }) {
+    return <div>{props.children}</div>
+}
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         <ServiceContainer providers={providers}>
+          <Wrapper>
             <App/>
+          </Wrapper>
         </ServiceContainer>
     </React.StrictMode>,
 )
