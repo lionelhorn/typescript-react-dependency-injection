@@ -6,7 +6,7 @@ import deepkitLogo from './assets/deepkit_white.svg'
 import './App.css'
 import { Logger } from "./logger.ts";
 
-function App(props: object, logger: Logger) {
+function App(_: object, logger: Logger) {
     const [count, setCount] = useState(0)
 
     return (
