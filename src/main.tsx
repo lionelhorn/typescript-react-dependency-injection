@@ -1,18 +1,32 @@
-import React from 'react'
+import React, {FC, PropsWithChildren} from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { ProviderWithScope, ServiceContainer } from "@deepkit/injector";
-import { Logger } from "./logger.ts";
+import {ProviderWithScope, ServiceContainer} from "@deepkit/injector";
+
+export class Config {
+  hello = "world"
+}
 
 const providers: ProviderWithScope[] = [
-    Logger
+  Config
 ];
 
+export const ConfigView = (_: any, config: Config) => {
+  return <p>{config.hello}</p>
+}
+
+export const Wrapper: FC<PropsWithChildren> = ({children}) => {
+  return <div style={{
+    border: "2px",
+    borderColor: "red"
+  }}>{children}</div>
+}
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-    <React.StrictMode>
-        <ServiceContainer providers={providers}>
-            <App/>
-        </ServiceContainer>
-    </React.StrictMode>,
+ <React.StrictMode>
+   <ServiceContainer providers={providers}>
+     <>
+       <ConfigView/>
+     </>
+   </ServiceContainer>
+ </React.StrictMode>,
 )
