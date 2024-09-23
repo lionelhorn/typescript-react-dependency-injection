@@ -12,6 +12,7 @@
   "dependencies": {
     "@deepkit/injector": "1.0.1-alpha.154",
     "@deepkit/type": "1.0.1-alpha.154",
+    "@deepkit/core": "1.0.1-alpha.154",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

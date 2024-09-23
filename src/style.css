@@ -1,0 +1,26 @@
+.di-apis {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.existing-di-api {
+    background: #cde4ff;
+    border: 3px #93c5ff solid
+}
+
+.alternative-di-api {
+    background: #dcffcc;
+    border: 3px #b6ff97 solid
+}
+
+.hasErrors {
+    background: #ffc6c6;
+    margin: 0;
+    padding: 4px;
+}
+
+pre {
+    margin: 0;
+    padding: 0;
+}
